@@ -44,14 +44,14 @@ zend_class_entry snowflake_ce;
  
 
 PHP_INI_BEGIN()
-    STD_PHP_INI_ENTRY("snowflake.worker_id",     "1",     PHP_INI_SYSTEM, OnUpdateLongGEZero, worker_id,     zend_snowflake_globals, snowflake_globals)
-    STD_PHP_INI_ENTRY("snowflake.region_id",     "1",     PHP_INI_SYSTEM, OnUpdateLongGEZero, region_id,     zend_snowflake_globals, snowflake_globals)
+    STD_PHP_INI_ENTRY("snowflake.worker_id",     "1",     PHP_INI_ALL, OnUpdateLongGEZero, worker_id,     zend_snowflake_globals, snowflake_globals)
+    STD_PHP_INI_ENTRY("snowflake.region_id",     "1",     PHP_INI_ALL, OnUpdateLongGEZero, region_id,     zend_snowflake_globals, snowflake_globals)
     //1576080000000 2019-12-12
 	STD_PHP_INI_ENTRY("snowflake.epoch",         "1576080000000",         PHP_INI_SYSTEM, OnUpdateLongGEZero, epoch,         zend_snowflake_globals, snowflake_globals)
-	STD_PHP_INI_ENTRY("snowflake.time_bits",     "41",     PHP_INI_SYSTEM, OnUpdateLongGEZero, time_bits,     zend_snowflake_globals, snowflake_globals)
-    STD_PHP_INI_ENTRY("snowflake.region_bits",   "5",      PHP_INI_SYSTEM, OnUpdateLongGEZero, region_bits,   zend_snowflake_globals, snowflake_globals)
-    STD_PHP_INI_ENTRY("snowflake.worker_bits",   "5",      PHP_INI_SYSTEM, OnUpdateLongGEZero, worker_bits,   zend_snowflake_globals, snowflake_globals)
-	STD_PHP_INI_ENTRY("snowflake.sequence_bits", "12",     PHP_INI_SYSTEM, OnUpdateLongGEZero, sequence_bits, zend_snowflake_globals, snowflake_globals)
+	STD_PHP_INI_ENTRY("snowflake.time_bits",     "41",     PHP_INI_ALL, OnUpdateLongGEZero, time_bits,     zend_snowflake_globals, snowflake_globals)
+    STD_PHP_INI_ENTRY("snowflake.region_bits",   "5",      PHP_INI_ALL, OnUpdateLongGEZero, region_bits,   zend_snowflake_globals, snowflake_globals)
+    STD_PHP_INI_ENTRY("snowflake.worker_bits",   "5",      PHP_INI_ALL, OnUpdateLongGEZero, worker_bits,   zend_snowflake_globals, snowflake_globals)
+	STD_PHP_INI_ENTRY("snowflake.sequence_bits", "12",     PHP_INI_ALL, OnUpdateLongGEZero, sequence_bits, zend_snowflake_globals, snowflake_globals)
 PHP_INI_END()
 
 /* }}} */
