@@ -38,6 +38,11 @@ extern zend_module_entry snowflake_module_entry;
 #include "TSRM.h"
 #endif
 
+// PHP8
+#if PHP_MAJOR_VERSION >= 8
+# define TSRMLS_CC
+#endif
+
 typedef struct _snowflake_state  snowflake;
 
 ZEND_BEGIN_MODULE_GLOBALS(snowflake)
